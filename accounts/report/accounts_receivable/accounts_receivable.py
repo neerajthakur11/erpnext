@@ -98,7 +98,7 @@ class AccountsReceivableReport(object):
 		if not hasattr(self, "gl_entries"):
 			conditions, values = self.prepare_conditions()
 			self.gl_entries = webnotes.conn.sql("""select * from `tabGL Entry`
-				where docstatus < 2 {} order by posting_date, account""".format(conditions),
+				where docstatus < 2 {0} order by posting_date, account""".format(conditions),
 				values, as_dict=True)
 				
 		return self.gl_entries
