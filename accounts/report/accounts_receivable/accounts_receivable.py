@@ -119,8 +119,8 @@ class AccountsReceivableReport(object):
 			if not account_map:
 				webnotes.throw(_("No Customer Accounts found."))
 			else:
-				accounts_list = ['"{}"'.format(ac) for ac in account_map]
-				conditions.append("account in ({})".format(", ".join(accounts_list)))
+				accounts_list = ['"{0}"'.format(ac) for ac in account_map]
+				conditions.append("account in ({0})".format(", ".join(accounts_list)))
 		
 		return " and ".join(conditions), values
 		
